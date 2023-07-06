@@ -57,3 +57,17 @@ deployments:
     interval: 3600.0
     anchor_date: '2023-07-06T17:50:59.238869+00:00'
     timezone: UTC
+- name: fifth-deploy
+  version:
+  tags: []
+  description:
+  entrypoint: lab103.py:main
+  parameters: {}
+  work_pool:
+    name: process-test
+    work_queue_name:
+    job_variables: {}
+  schedule:
+    interval: 120.0
+    anchor_date: '2023-07-06T18:43:03.852294+00:00'
+    timezone: UTC
