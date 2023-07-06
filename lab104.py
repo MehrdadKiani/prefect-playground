@@ -20,7 +20,7 @@ def write_fact(fact: str):
 
 
 @flow
-def pipe():
+def pipe(default: str = "unknown"):
     fact = fetch_cat_fact()
     formatted_fact = formatting(fact)
     msg = write_fact(formatted_fact)

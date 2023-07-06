@@ -21,29 +21,25 @@ pull:
 
 # the deployments section allows you to provide configuration for deploying flows
 deployments:
-- name:
+- name: second_deploy
   version:
   tags: []
   description:
-  schedule: {}
-  flow_name:
-  entrypoint:
+  entrypoint: lab104.py:pipe
   parameters: {}
   work_pool:
-    name:
-    work_queue_name:
-    job_variables: {}
-- name: test_flow
-  version:
-  tags: []
-  description:
-  entrypoint: flowtest.py:test_flow
-  parameters: {}
-  work_pool:
-    name: first-deploy-worker
+    name: process-test
     work_queue_name:
     job_variables: {}
   schedule:
-    interval: 3600.0
-    anchor_date: '2023-07-06T00:56:05.472935+00:00'
-    timezone: UTC
+- name: third-deploy
+  version:
+  tags: []
+  description:
+  entrypoint: lab103.py:main
+  parameters: {}
+  work_pool:
+    name: process-test
+    work_queue_name:
+    job_variables: {}
+  schedule:
