@@ -43,3 +43,17 @@ deployments:
     work_queue_name:
     job_variables: {}
   schedule:
+- name: forth-deploy
+  version:
+  tags: []
+  description:
+  entrypoint: lab103.py:main
+  parameters: {}
+  work_pool:
+    name: process-test
+    work_queue_name:
+    job_variables: {}
+  schedule:
+    interval: 3600.0
+    anchor_date: '2023-07-06T17:50:59.238869+00:00'
+    timezone: UTC
