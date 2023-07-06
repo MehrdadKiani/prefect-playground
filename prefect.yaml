@@ -7,29 +7,43 @@ name: prefect-playground
 prefect-version: 2.10.18
 
 # build section allows you to manage and build docker images
-build: null
+build:
 
 # push section allows you to manage if and how this project is uploaded to remote locations
-push: null
+push:
 
 # pull section allows you to provide instructions for cloning this project in remote locations
 pull:
 - prefect.deployments.steps.git_clone:
     repository: https://github.com/MehrdadKiani/prefect-playground.git
     branch: main
-    access_token: null
+    access_token:
 
 # the deployments section allows you to provide configuration for deploying flows
 deployments:
-- name: null
-  version: null
+- name:
+  version:
   tags: []
-  description: null
+  description:
   schedule: {}
-  flow_name: null
-  entrypoint: null
+  flow_name:
+  entrypoint:
   parameters: {}
   work_pool:
-    name: null
-    work_queue_name: null
+    name:
+    work_queue_name:
     job_variables: {}
+- name: test_flow
+  version:
+  tags: []
+  description:
+  entrypoint: flowtest.py:test_flow
+  parameters: {}
+  work_pool:
+    name: first-deploy-worker
+    work_queue_name:
+    job_variables: {}
+  schedule:
+    interval: 3600.0
+    anchor_date: '2023-07-06T00:56:05.472935+00:00'
+    timezone: UTC
